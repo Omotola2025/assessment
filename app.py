@@ -55,6 +55,7 @@ navbar = """
     margin-bottom: 10px;
     border: 1px solid #e0e0e0;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+     border-left: 5px solid #4a90e2;
 }
 
 
@@ -76,8 +77,8 @@ navbar = """
 .custom-divider {
     margin-top: 5px;
     margin-bottom: 20px;
-    height: 2px;
-    background: #e962f5;
+    height: 5px;
+    background: linear-gradient(to right, #4a90e2, transparent);
 }
 
 
@@ -93,6 +94,7 @@ h4 {
     text-align = center
     }
 </style>
+   
 
 <div class="topnav">
   <a href="/app" class="active">Home</a>
@@ -125,10 +127,11 @@ st.write("""
 The heatmap shows which columns contain missing values and how they are distributed. Most pollutants had scattered missing points, which is common in environmental datasets due to sensor downtime or incomplete reporting. This visualization helped confirm the need for imputation during data cleaning.
 """)
 
-col1, col2, = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("<h4 class='subsection-title'>Univariate Analysis</h4>", unsafe_allow_html=True)
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>1. Univariate Analysis</h4>", unsafe_allow_html=True)
     st.write("""
 Univariate analysis examines **one variable at a time**, helping understand:
 - PM2.5 histograms  
@@ -137,9 +140,15 @@ Univariate analysis examines **one variable at a time**, helping understand:
 
 Useful for spotting outliers and skewness.
 """)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Divider
+    st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
+
 
 with col2:
-    st.markdown("<h4 class='subsection-title'>Bivariate Analysis</h4>", unsafe_allow_html=True)
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>2. Bivariate Analysis</h4>", unsafe_allow_html=True)
     st.write("""
 Bivariate analysis explores relationships between **two variables**, such as:
 - PM2.5 vs AQI scatter  
@@ -148,6 +157,28 @@ Bivariate analysis explores relationships between **two variables**, such as:
 
 Reveals pollutant–AQI influence.
 """)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Divider
+    st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
+
+
+with col3:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>3. Multivariate Analysis</h4>", unsafe_allow_html=True)
+    st.write("""
+Multivariate analysis studies **three or more variables**, often using:
+- Correlation heatmaps  
+- Pairplots  
+- Advanced pollutant interactions  
+
+Helps identify combined effects on AQI.
+""")
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Divider
+    st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
+
 
 image_path_1 = os.path.join("images", "opk.png")
 
