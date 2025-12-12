@@ -276,10 +276,9 @@ if data_frame is not None:
 else:
     st.error(status_message)
 
+st.markdown("<div class='.card'></div>", unsafe_allow_html=True)
 
-st.markdown('---') 
-
-# Create two columns for the text areas and buttons
+st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 
 with col1:
