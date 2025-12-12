@@ -128,7 +128,7 @@ The heatmap shows which columns contain missing values and how they are distribu
 col1, col2, = st.columns(2)
 
 with col1:
-    st.markdown("<h4 class='subsection-title'>1. Univariate Analysis</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>Univariate Analysis</h4>", unsafe_allow_html=True)
     st.write("""
 Univariate analysis examines **one variable at a time**, helping understand:
 - PM2.5 histograms  
@@ -139,7 +139,7 @@ Useful for spotting outliers and skewness.
 """)
 
 with col2:
-    st.markdown("<h4 class='subsection-title'>2. Bivariate Analysis</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>Bivariate Analysis</h4>", unsafe_allow_html=True)
     st.write("""
 Bivariate analysis explores relationships between **two variables**, such as:
 - PM2.5 vs AQI scatter  
