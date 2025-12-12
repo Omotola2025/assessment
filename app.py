@@ -125,7 +125,7 @@ st.write("""
 The heatmap shows which columns contain missing values and how they are distributed. Most pollutants had scattered missing points, which is common in environmental datasets due to sensor downtime or incomplete reporting. This visualization helped confirm the need for imputation during data cleaning.
 """)
 
-col1, col2, = st.columns(3)
+col1, col2, = st.columns(2)
 
 with col1:
     st.markdown("<h4 class='subsection-title'>1. Univariate Analysis</h4>", unsafe_allow_html=True)
