@@ -7,6 +7,9 @@ from glob import glob
 
 st.set_page_config(page_title="Data Cleaning", layout="wide")
 
+import streamlit as st
+import os
+
 hide_sidebar = """
 <style>
     [data-testid="stSidebar"] {display: none;}
@@ -15,11 +18,10 @@ hide_sidebar = """
 """
 st.markdown(hide_sidebar, unsafe_allow_html=True)
 
-
 navbar = """
 <style>
 .topnav {
-   background-color: #18f58e;
+    background-color: #1f2937;
     padding: 20px 30px;
     border-radius: 8px;
     width: 1000px;
@@ -29,6 +31,7 @@ navbar = """
     margin-top:-60px;
     margin-left: 80px;
 }
+
 .topnav a {
     color: #f2f2f2;
     text-decoration: none;
@@ -37,13 +40,22 @@ navbar = """
     border-radius: 5px;
     display: inline-block;
 }
+
 .topnav a:hover {
-    background-color: #374151;
+    background-color: #4b5563;
+    color: white;
 }
+
 .topnav a.active {
     background-color: #2563eb;
     color: white;
 }
+
+.main {
+    background-color: #2f7aeb;
+}
+
+
 .card {
     background: #e962f5;
     padding: 25px;
@@ -52,6 +64,23 @@ navbar = """
     border: 1px solid #e0e0e0;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
 }
+
+
+.section-title {
+    font-size: 30px;
+    color: #2c7be5;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+.subsection-title {
+    font-size: 22px;
+    color: #ff9900;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
 .custom-divider {
     margin-top: 5px;
     margin-bottom: 20px;
@@ -59,6 +88,18 @@ navbar = """
     background: #e962f5;
 }
 
+
+.center-text {
+    text-align: center;
+}
+
+
+ul li {
+    margin-bottom: 5px;
+}
+h4 {
+    text-align = center
+    }
 </style>
 
 <div class="topnav">
