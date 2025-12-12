@@ -1,79 +1,80 @@
 import streamlit as st
 import os
-
-
 hide_sidebar = """
 <style>
-    [data-testid="stSidebar"] {display: none;}
-    [data-testid="collapsedControl"] {display: none;}
+[data-testid="stSidebar"] {display: none;}
+[data-testid="collapsedControl"] {display: none;}
 </style>
 """
 st.markdown(hide_sidebar, unsafe_allow_html=True)
 
 navbar = """
 <style>
+
+/* ---------- TOP NAVBAR ---------- */
 .topnav {
     background-color: #f518ed;
-    padding: 20px 30px;
+    padding: 15px 10px;
     border-radius: 8px;
-    width: 1000px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
     align-items: center;
-    margin-top:-60px;
-    margin-left: 80px;
+    margin-top: -40px;
 }
 
+/* Nav links */
 .topnav a {
-    color: #f2f2f2;
+    color: #fff;
     text-decoration: none;
-    font-size: 17px;
-    padding: 12px 25px;  
+    font-size: 18px;
+    padding: 10px 18px;
     border-radius: 5px;
-    display: inline-block;
+    background: #7c04a0;
+    white-space: nowrap;
 }
 
+/* Hover */
 .topnav a:hover {
     background-color: #4b5563;
     color: white;
 }
 
+/* Active page */
 .topnav a.active {
     background-color: #2563eb;
     color: white;
 }
 
-.main {
-    background-color: #2f7aeb;
-}
-
-
+/* ---------- CARD DESIGN ---------- */
 .card {
     background: #e962f5;
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 1px solid #e0e0e0;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
-     border-left: 5px solid #4a90e2;
+    border-left: 5px solid #4a90e2;
 }
 
-
+/* Section Title */
 .section-title {
-    font-size: 30px;
+    font-size: 28px;
     color: #2c7be5;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
-
 .subsection-title {
-    font-size: 22px;
+    font-size: 20px;
     color: #ff9900;
     font-weight: 600;
     margin-top: 5px;
 }
 
+/* Divider */
 .custom-divider {
     margin-top: 5px;
     margin-bottom: 20px;
@@ -81,29 +82,50 @@ navbar = """
     background: linear-gradient(to right, #4a90e2, transparent);
 }
 
-
-.center-text {
-    text-align: center;
-}
+/* Center Text */
+.center-text { text-align: center; }
 
 
-ul li {
-    margin-bottom: 5px;
-}
-h4 {
-    text-align = center
+/* ---------- MOBILE RESPONSIVENESS ---------- */
+@media (max-width: 600px) {
+
+    .topnav {
+        padding: 10px;
+        gap: 6px;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: -20px;
     }
-</style>
-   
 
+    .topnav a {
+        font-size: 14px !important;
+        padding: 8px 12px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .subsection-title {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+</style>
+
+<!-- NAV LINKS USING INTERNAL STREAMLIT ROUTING -->
 <div class="topnav">
-  <a href="/app" class="active">Home</a>
-  <a href="/Data_Cleaning">Data Cleaning</a>
-  <a href="/Data_Visualization">Data Visualization</a>
-  <a href="/Model_Training">Model_Training</a>
-  <a href="/Post-Review">Project Review</a>
+  <a onclick="window.location.href='?page=Home'" class="active">Home</a>
+  <a onclick="window.location.href='?page=Data_Cleaning'">Data Cleaning</a>
+  <a onclick="window.location.href='?page=Data_Visualization'">Data Visualization</a>
+  <a onclick="window.location.href='?page=Model_Training'">Model Training</a>
+  <a onclick="window.location.href='?page=Post_Review'">Project Review</a>
 </div>
 """
+
 st.markdown(navbar, unsafe_allow_html=True)
 
 
