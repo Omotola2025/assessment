@@ -73,7 +73,7 @@ st.markdown("<div class='card'>", unsafe_allow_html=True)
 """
 st.markdown(navbar, unsafe_allow_html=True)
 
-st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
+st.markdown("<div class='.card'></div>", unsafe_allow_html=True)
 
 
 st.sidebar.success("This Data Cleaning will show the kind of techniques employed")
