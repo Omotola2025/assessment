@@ -12,6 +12,110 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="Data Visualization", layout="wide")
 
+hide_sidebar = """
+<style>
+    [data-testid="stSidebar"] {display: none;}
+    [data-testid="collapsedControl"] {display: none;}
+</style>
+"""
+st.markdown(hide_sidebar, unsafe_allow_html=True)
+
+navbar = """
+<style>
+.topnav {
+    background-color: #f518ed;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    margin-top:-60px;
+    margin-left: 80px;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 12px 25px;  
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.topnav a:hover {
+    background-color: #4b5563;
+    color: white;
+}
+
+.topnav a.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+.main {
+    background-color: #2f7aeb;
+}
+
+
+.card {
+    background: #e962f5;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+     border-left: 5px solid #4a90e2;
+}
+
+
+.section-title {
+    font-size: 30px;
+    color: #2c7be5;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+.subsection-title {
+    font-size: 22px;
+    color: #ff9900;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.custom-divider {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 5px;
+    background: linear-gradient(to right, #4a90e2, transparent);
+}
+
+
+.center-text {
+    text-align: center;
+}
+
+
+ul li {
+    margin-bottom: 5px;
+}
+h4 {
+    text-align = center
+    }
+</style>
+   
+
+<div class="topnav">
+  <a href="/app" class="active">Home</a>
+  <a href="/Data_Cleaning">Data Cleaning</a>
+  <a href="/Data_Visualization">Data Visualization</a>
+  <a href="/Model_Training">Model_Training</a>
+  <a href="/Post-Review">Project Review</a>
+</div>
+"""
+st.markdown(navbar, unsafe_allow_html=True)
+
 st.title('Data Visualization and Feature Engineering')
 
 st.sidebar.success("This Visualization will show the kind of techniques employed")
