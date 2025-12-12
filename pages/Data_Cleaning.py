@@ -59,8 +59,6 @@ navbar = """
     background: #e962f5;
 }
 
-
-st.markdown("<div class='card'>", unsafe_allow_html=True)
 </style>
 
 <div class="topnav">
@@ -75,7 +73,7 @@ st.markdown(navbar, unsafe_allow_html=True)
 
 st.markdown("<div class='.card'></div>", unsafe_allow_html=True)
 
-
+st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
 st.sidebar.success("This Data Cleaning will show the kind of techniques employed")
 
 st.title('Data Cleaning and Preprocessing')
