@@ -21,8 +21,6 @@ from sklearn.linear_model import LogisticRegression
 st.set_page_config(page_title="Model Training", layout="wide")
 
 
-st.title('Model Training and Evaluation')
-
 hide_sidebar = """
 <style>
 [data-testid="stSidebar"] {display: none;}
@@ -148,6 +146,10 @@ navbar = """
 """
 
 st.markdown(navbar, unsafe_allow_html=True)
+
+
+st.title('Model Training and Evaluation')
+
 st.sidebar.success("Welcome to the Machine Learning Page")
 
 folder_path = "Assessment Data-20251028"
