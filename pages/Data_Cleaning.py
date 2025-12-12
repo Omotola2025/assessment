@@ -19,7 +19,7 @@ st.markdown(hide_sidebar, unsafe_allow_html=True)
 navbar = """
 <style>
 .topnav {
-    background-color: #1f2937;
+    background-color: #f518ed;
     overflow: hidden;
     padding: 18px;
     border-radius: 10px;
