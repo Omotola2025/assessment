@@ -27,7 +27,7 @@ navbar = """
 
 
 .topnav a {
-    color:#f518ed;
+    color:#f0ebf0;
     text-decoration: none;
     font-size: 18px;
     padding: 10px 18px;
