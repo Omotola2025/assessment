@@ -38,7 +38,7 @@ navbar = """
 
 
 .topnav a:hover {
-    background-color: #f518ed;
+    background-color: #f0ebf0;
     color: white;
 }
 
