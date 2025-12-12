@@ -21,7 +21,7 @@ st.markdown(hide_sidebar, unsafe_allow_html=True)
 navbar = """
 <style>
 .topnav {
-    background-color: #1f2937;
+    background-color: #f518ed;
     padding: 20px 30px;
     border-radius: 8px;
     width: 1000px;
@@ -63,6 +63,7 @@ navbar = """
     margin-bottom: 10px;
     border: 1px solid #e0e0e0;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+     border-left: 5px solid #4a90e2;
 }
 
 
@@ -84,8 +85,8 @@ navbar = """
 .custom-divider {
     margin-top: 5px;
     margin-bottom: 20px;
-    height: 2px;
-    background: #e962f5;
+    height: 5px;
+    background: linear-gradient(to right, #4a90e2, transparent);
 }
 
 
@@ -101,6 +102,7 @@ h4 {
     text-align = center
     }
 </style>
+   
 
 <div class="topnav">
   <a href="/app" class="active">Home</a>
