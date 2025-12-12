@@ -27,18 +27,18 @@ navbar = """
 
 
 .topnav a {
-    color: #fa48f7;
+    color:#f518ed;
     text-decoration: none;
     font-size: 18px;
     padding: 10px 18px;
     border-radius: 5px;
-    background: #7c04a0;
+    background: #f518ed;
     white-space: nowrap;
 }
 
 
 .topnav a:hover {
-    background-color: #fa48f7;
+    background-color: #f518ed;
     color: white;
 }
 
@@ -48,7 +48,7 @@ navbar = """
     color: white;
 }
 
-/* ---------- CARD DESIGN ---------- */
+
 .card {
     background: #e962f5;
     padding: 20px;
