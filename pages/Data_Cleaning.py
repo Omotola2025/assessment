@@ -26,6 +26,7 @@ navbar = """
     display: flex;
     justify-content: space-between;
     margin_top: -20px;
+    width: 100%;
 }
 .topnav a {
     color: #f2f2f2;
