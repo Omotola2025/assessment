@@ -2,11 +2,6 @@ import streamlit as st
 
 st.set_page_config(page_title="Machine Learning", layout="wide")
 
-st.title("Logistic Regression Evaluation")
-
-# ==============================
-# HIDE SIDEBAR
-# ==============================
 hide_sidebar = """
 <style>
     [data-testid="stSidebar"] {display: none;}
@@ -15,9 +10,7 @@ hide_sidebar = """
 """
 st.markdown(hide_sidebar, unsafe_allow_html=True)
 
-# ==============================
-# NAVBAR CSS + HTML
-# ==============================
+
 navbar = """
 <style>
 .topnav {
@@ -85,9 +78,8 @@ navbar = """
 """
 st.markdown(navbar, unsafe_allow_html=True)
 
-# ==============================
-# LOGISTIC REGRESSION SUMMARY (INSIDE CARD)
-# ==============================
+st.title("Logistic Regression Evaluation")
+
 st.markdown("<div class='card'>", unsafe_allow_html=True)
 st.write("""
 The Logistic Regression model performed strongly with an accuracy of **about 96%**, especially for major AQI categories like **Moderate**, **Poor**, and **Satisfactory**, where both precision and recall were high.
@@ -102,9 +94,7 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
 
-# ==============================
-# THREE CONTENT COLUMNS
-# ==============================
+
 col1, col2, col3 = st.columns(3)
 
 # -------- COLUMN 1 --------
@@ -144,9 +134,7 @@ The final project includes an interactive **Streamlit app** for real-time pollut
 """)
     st.markdown("</div>", unsafe_allow_html=True)
 
-# ==============================
-# RANDOM FOREST VS LOGISTIC REGRESSION SECTION
-# ==============================
+
 st.title("Comparison Between Random Forest and Logistic Regression")
 
 st.markdown("<div class='card'>", unsafe_allow_html=True)
@@ -155,7 +143,7 @@ st.write("""
 
 **Logistic Regression**, with its 96% accuracy, still performs well but struggles with subtle class boundaries such as the **Good** category.
 
-### 🔍 Summary:
+###  Summary:
 - **Random Forest:** superior accuracy, deeper pattern recognition  
 - **Logistic Regression:** strong baseline model but limited by linear assumptions  
 """)
