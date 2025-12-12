@@ -131,14 +131,10 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
-    st.markdown("<h4 class='subsection-title'>1. Univariate Analysis</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>Project Background & Significance</h4>", unsafe_allow_html=True)
     st.write("""
-Univariate analysis examines **one variable at a time**, helping understand:
-- PM2.5 histograms  
-- Summary statistics  
-- AQI category frequency  
-
-Useful for spotting outliers and skewness.
+This project conducts a comprehensive analysis of daily air quality data collected from major Indian cities between 2015 and 2020, capturing a crucial period of rapid urbanization and environmental change. The dataset contains measurements of critical atmospheric pollutants such as PM2.5, PM10, NO, NO2, NOx, NH3, CO, SO2, and O3, alongside volatile organic compounds including Benzene, Toluene, and Xylene. Together with the Air Quality Index (AQI) and its associated AQI_Bucket classifications, these variables provide an in-depth picture of pollution levels, seasonal variations, and regional disparities across India. Understanding these trends is essential for developing informed environmental policies,
+improving public health outcomes, and supporting sustainable urban planning.
 """)
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -148,14 +144,10 @@ Useful for spotting outliers and skewness.
 
 with col2:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
-    st.markdown("<h4 class='subsection-title'>2. Bivariate Analysis</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>Project Purpose & Analytical Approach</h4>", unsafe_allow_html=True)
     st.write("""
-Bivariate analysis explores relationships between **two variables**, such as:
-- PM2.5 vs AQI scatter  
-- NO2 vs NOx correlation  
-- AQI buckets across cities  
-
-Reveals pollutant–AQI influence.
+    The primary objective of this project is to clean, preprocess, and transform the raw dataset into a reliable and structured form suitable for detailed analysis. Through comprehensive exploratory data analysis (EDA), the project identifies pollutant behaviors, uncovers hidden patterns, and examines correlations that influence overall air quality. Feature engineering techniques are applied to enrich the dataset, enabling deeper insights into pollutant interactions and AQI trends. Visualizations—including time-series plots, heatmaps, and distribution charts—enhance interpretability and support evidence-based conclusions.
+    This rigorous analytical approach ensures that the findings are both meaningful and actionable.
 """)
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -165,14 +157,10 @@ Reveals pollutant–AQI influence.
 
 with col3:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
-    st.markdown("<h4 class='subsection-title'>3. Multivariate Analysis</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 class='subsection-title'>Machine Learning, Implementation & Tools</h4>", unsafe_allow_html=True)
     st.write("""
-Multivariate analysis studies **three or more variables**, often using:
-- Correlation heatmaps  
-- Pairplots  
-- Advanced pollutant interactions  
-
-Helps identify combined effects on AQI.
+    Building on the analytical foundation, the project develops a machine learning classification model capable of predicting AQI_Bucket categories based on pollutant concentrations. This model is trained, evaluated, and optimized using modern machine learning techniques to ensure robust predictive performance. To enhance accessibility and real-world applicability, a lightweight GUI application is implemented, allowing users to explore the data interactively and generate AQI predictions in real time. Throughout the project lifecycle, GitHub is utilized for version control, collaboration, documentation, and workflow management, ensuring transparency and reproducibility. Together,
+    these components create a complete end-to-end data science solution—from raw data to actionable insights and intelligent prediction.
 """)
     st.markdown("</div>", unsafe_allow_html=True)
 
