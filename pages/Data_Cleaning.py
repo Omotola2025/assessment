@@ -25,6 +25,7 @@ navbar = """
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    margin_top: -20px;
 }
 .topnav a {
     color: #f2f2f2;
