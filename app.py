@@ -11,7 +11,7 @@ st.markdown(hide_sidebar, unsafe_allow_html=True)
 navbar = """
 <style>
 
-/* ---------- TOP NAVBAR ---------- */
+
 .topnav {
     background-color: #f518ed;
     padding: 15px 10px;
@@ -115,14 +115,12 @@ navbar = """
     }
 }
 </style>
-
-<!-- NAV LINKS USING INTERNAL STREAMLIT ROUTING -->
 <div class="topnav">
-  <a onclick="window.location.href='?page=Home'" class="active">Home</a>
-  <a onclick="window.location.href='?page=Data_Cleaning'">Data Cleaning</a>
-  <a onclick="window.location.href='?page=Data_Visualization'">Data Visualization</a>
-  <a onclick="window.location.href='?page=Model_Training'">Model Training</a>
-  <a onclick="window.location.href='?page=Post_Review'">Project Review</a>
+  <a href="/app" class="active">Home</a>
+  <a href="/Data_Cleaning">Data Cleaning</a>
+  <a href="/Data_Visualization">Data Visualization</a>
+  <a href="/Model_Training">Model_Training</a>
+  <a href="/Post-Review">Project Review</a>
 </div>
 """
 
