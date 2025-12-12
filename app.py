@@ -25,9 +25,9 @@ navbar = """
     margin-top: -40px;
 }
 
-/* Nav links */
+
 .topnav a {
-    color: #fff;
+    color: #fa48f7;
     text-decoration: none;
     font-size: 18px;
     padding: 10px 18px;
@@ -36,9 +36,9 @@ navbar = """
     white-space: nowrap;
 }
 
-/* Hover */
+
 .topnav a:hover {
-    background-color: #4b5563;
+    background-color: #fa48f7;
     color: white;
 }
 
