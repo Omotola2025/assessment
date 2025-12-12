@@ -125,6 +125,30 @@ st.write("""
 The heatmap shows which columns contain missing values and how they are distributed. Most pollutants had scattered missing points, which is common in environmental datasets due to sensor downtime or incomplete reporting. This visualization helped confirm the need for imputation during data cleaning.
 """)
 
+col1, col2, = st.columns(3)
+
+with col1:
+    st.markdown("<h4 class='subsection-title'>1. Univariate Analysis</h4>", unsafe_allow_html=True)
+    st.write("""
+Univariate analysis examines **one variable at a time**, helping understand:
+- PM2.5 histograms  
+- Summary statistics  
+- AQI category frequency  
+
+Useful for spotting outliers and skewness.
+""")
+
+with col2:
+    st.markdown("<h4 class='subsection-title'>2. Bivariate Analysis</h4>", unsafe_allow_html=True)
+    st.write("""
+Bivariate analysis explores relationships between **two variables**, such as:
+- PM2.5 vs AQI scatter  
+- NO2 vs NOx correlation  
+- AQI buckets across cities  
+
+Reveals pollutant–AQI influence.
+""")
+
 image_path_1 = os.path.join("images", "opk.png")
 
 
