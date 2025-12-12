@@ -7,6 +7,72 @@ from glob import glob
 
 st.set_page_config(page_title="Data Cleaning", layout="wide")
 
+hide_sidebar = """
+<style>
+    [data-testid="stSidebar"] {display: none;}
+    [data-testid="collapsedControl"] {display: none;}
+</style>
+"""
+st.markdown(hide_sidebar, unsafe_allow_html=True)
+
+
+navbar = """
+<style>
+.topnav {
+    background-color: #1f2937;
+    overflow: hidden;
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.topnav a {
+    color: #f2f2f2;
+    padding: 14px 26px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.topnav a:hover {
+    background-color: #374151;
+}
+.topnav a.active {
+    background-color: #2563eb;
+    color: white;
+}
+.card {
+    background: #e962f5;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+.custom-divider {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 2px;
+    background: #e962f5;
+}
+
+
+st.markdown("<div class='card'>", unsafe_allow_html=True)
+</style>
+
+<div class="topnav">
+  <a href="/app" class="active">Home</a>
+  <a href="/Data_Cleaning">Data Cleaning</a>
+  <a href="/Data_Visualization">Data Visualization</a>
+  <a href="/Model_Training">Model_Training</a>
+  <a href="/Post-Review">Project Review</a>
+</div>
+"""
+st.markdown(navbar, unsafe_allow_html=True)
+
+st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
+
+
 st.sidebar.success("This Data Cleaning will show the kind of techniques employed")
 
 st.title('Data Cleaning and Preprocessing')
