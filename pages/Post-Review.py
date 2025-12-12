@@ -1,9 +1,12 @@
 import streamlit as st
 
-st.set_page_config(page_title="Machine Learning")
+st.set_page_config(page_title="Machine Learning", layout="wide")
 
 st.title("Logistic Regression Evaluation")
 
+# ==============================
+# HIDE SIDEBAR
+# ==============================
 hide_sidebar = """
 <style>
     [data-testid="stSidebar"] {display: none;}
@@ -12,6 +15,9 @@ hide_sidebar = """
 """
 st.markdown(hide_sidebar, unsafe_allow_html=True)
 
+# ==============================
+# NAVBAR CSS + HTML
+# ==============================
 navbar = """
 <style>
 .topnav {
@@ -45,58 +51,29 @@ navbar = """
     color: white;
 }
 
-.main {
-    background-color: #2f7aeb;
-}
-
-
 .card {
     background: #e962f5;
     padding: 25px;
     border-radius: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid #e0e0e0;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
-     border-left: 5px solid #4a90e2;
+    border-left: 6px solid #4a90e2;
 }
-
-
-.section-title {
-    font-size: 30px;
-    color: #2c7be5;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
 
 .subsection-title {
     font-size: 22px;
     color: #ff9900;
     font-weight: 600;
-    margin-top: 5px;
 }
 
 .custom-divider {
-    margin-top: 5px;
-    margin-bottom: 20px;
     height: 5px;
     background: linear-gradient(to right, #4a90e2, transparent);
+    margin: 20px 0;
 }
 
-
-.center-text {
-    text-align: center;
-}
-
-
-ul li {
-    margin-bottom: 5px;
-}
-h4 {
-    text-align = center
-    }
 </style>
-   
 
 <div class="topnav">
   <a href="/app" class="active">Home</a>
@@ -108,75 +85,78 @@ h4 {
 """
 st.markdown(navbar, unsafe_allow_html=True)
 
-
+# ==============================
+# LOGISTIC REGRESSION SUMMARY (INSIDE CARD)
+# ==============================
+st.markdown("<div class='card'>", unsafe_allow_html=True)
 st.write("""
-The Logistic Regression model actually did a pretty good job, reaching about 96% accuracy. It was able to correctly classify most of the AQI categories, especially the major ones like Moderate, Poor, and Satisfactory. These categories had very strong precision and recall scores.
+The Logistic Regression model performed strongly with an accuracy of **about 96%**, especially for major AQI categories like **Moderate**, **Poor**, and **Satisfactory**, where both precision and recall were high.
 
-The only area where the model struggled a bit was with the Good category, where it mixed things up more often. This is not surprising because Logistic Regression is a simpler model and sometimes has trouble with complex boundaries between classes.
+However, it struggled slightly with the **Good** category, often confusing it with nearby AQI classes. This is expected because Logistic Regression is a simpler linear model that cannot perfectly capture complex, non-linear relationships between pollutants and AQI categories.
 
-Overall, the model still performs well and gives a solid baseline, but it’s clear that more advanced models like Random Forest and XGBoost do a better job at capturing the full patterns in the data.
+**In summary:**  
+- Logistic Regression gives a strong, reliable baseline  
+- But it lacks the deeper pattern recognition capability of tree-based models  
 """)
+st.markdown("</div>", unsafe_allow_html=True)
+
+st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
+
+# ==============================
+# THREE CONTENT COLUMNS
+# ==============================
 col1, col2, col3 = st.columns(3)
 
-# ============================
-# COLUMN 1
-# ============================
+# -------- COLUMN 1 --------
 with col1:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.markdown("<h4 class='subsection-title'>Project Background & Significance</h4>", unsafe_allow_html=True)
     st.write("""
-This project delivers a comprehensive exploration of air quality conditions across major Indian cities between **2015 and 2020**, a period marked by rapid industrial growth, increased vehicular emissions, and evolving environmental policies. The dataset captures essential pollutants such as **PM2.5, PM10, NO, NO2, NOx, NH3, CO, SO2, O3**, and volatile organic compounds like **Benzene, Toluene, and Xylene**. These indicators collectively reveal the extent of urban pollution, highlight high-risk regions, and uncover seasonal fluctuations driven by climatic conditions and human activity.
+This project explores major Indian cities' air quality from **2015 to 2020**, capturing a period of intense industrial and urban expansion. The dataset includes pollutants such as **PM2.5, PM10, NO₂, NOx, NH₃, CO, SO₂, O₃**, and VOCs (Benzene, Toluene, Xylene), offering a complete profile of environmental health.
 
-By combining pollutant data with the **Air Quality Index (AQI)** and **AQI_Bucket**, the project provides a nuanced understanding of public exposure risks. This insight is vital for environmental monitoring, healthcare planning, and government interventions. The findings support evidence-based policies aimed at reducing pollution, improving respiratory health, and fostering sustainable city development.
+Combined with AQI and AQI_Bucket values, the data reveals regional disparities, seasonal pollution cycles, and population exposure risks. These insights are critical for public health strategies, urban planning, and environmental policy development.
 """)
     st.markdown("</div>", unsafe_allow_html=True)
+
     st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
 
-
-
-# ============================
-# COLUMN 2
-# ============================
+# -------- COLUMN 2 --------
 with col2:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.markdown("<h4 class='subsection-title'>Project Purpose & Analytical Approach</h4>", unsafe_allow_html=True)
     st.write("""
-The goal of this project is to transform raw environmental data into meaningful insights through a structured analytical pipeline. The first stage focuses on **data cleaning**, addressing missing values, removing inconsistencies, and standardizing formats to ensure accuracy. This is followed by **exploratory data analysis (EDA)**, where pollutant distributions, temporal trends, and inter-variable correlations are examined to uncover hidden behaviors.
+The project transforms raw environmental data into structured insights through **data cleaning, preprocessing**, and **exploratory data analysis (EDA)**. Missing values are treated, irregularities removed, and pollutant patterns are explored using distributions, heatmaps, and time trends.
 
-Advanced visualization tools—including correlation heatmaps, time-series graphs, and pollutant distribution charts—enable clearer interpretation of pollutant dynamics. Through **feature engineering**, new meaningful attributes are created to strengthen predictive modeling. This systematic approach ensures that every stage of analysis contributes to a richer and more interpretable dataset, paving the way for reliable machine learning outcomes.
+Through **feature engineering**, new variables are created to strengthen model performance. The analytical workflow ensures clarity, accuracy, and deeper understanding of pollution behavior across cities and time periods.
 """)
     st.markdown("</div>", unsafe_allow_html=True)
+
     st.markdown("<div class='custom-divider'></div>", unsafe_allow_html=True)
 
-
-
-# ============================
-# COLUMN 3
-# ============================
+# -------- COLUMN 3 --------
 with col3:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.markdown("<h4 class='subsection-title'>Machine Learning, Implementation & Tools</h4>", unsafe_allow_html=True)
     st.write("""
-Building on the analytical insights, the project employs **machine learning techniques** to predict AQI categories using pollutant concentrations as inputs. Several classification models— including Logistic Regression, Random Forest, and XGBoost—are trained and compared to identify the most accurate performer. Performance metrics such as accuracy, precision, recall, and confusion matrices help evaluate model reliability.
+Using the cleaned dataset, multiple machine learning models—including **Logistic Regression**, **Random Forest**, and **XGBoost**—were trained to predict AQI categories. Their performance was evaluated using accuracy, precision, recall, and confusion matrices.
 
-To enhance usability, the system is integrated into an interactive **Streamlit-based GUI**, allowing users to visualize trends, explore pollutant behaviors, and generate AQI predictions in real time. Version control and collaboration are maintained through **GitHub**, ensuring transparent development, traceable updates, and professional project structure. Together, these components deliver a complete end-to-end data science solution that transitions seamlessly from raw data analysis to intelligent, actionable predictions.
+The final project includes an interactive **Streamlit app** for real-time pollutant visualization and AQI prediction. Version control through **GitHub** ensures transparency, collaboration, and reproducibility, forming a complete end-to-end machine learning pipeline.
 """)
     st.markdown("</div>", unsafe_allow_html=True)
 
-
+# ==============================
+# RANDOM FOREST VS LOGISTIC REGRESSION SECTION
+# ==============================
 st.title("Comparison Between Random Forest and Logistic Regression")
 
-
-
+st.markdown("<div class='card'>", unsafe_allow_html=True)
 st.write("""
-Both models did a solid job, but Random Forest clearly stood out. It achieved almost perfect accuracy, correctly predicting nearly every AQI category. Even the tricky categories like Very Poor and Severe were handled really well. This makes sense because Random Forest is great at picking up complex patterns in the data.
+**Random Forest performed exceptionally**, achieving near-perfect accuracy across all AQI categories—even the difficult ones like **Very Poor** and **Severe**. Its strength comes from handling complex, non-linear patterns that Logistic Regression cannot capture.
 
-Logistic Regression also performed nicely with about 96% accuracy, but it struggled a bit more—especially with the Good category. This happens because Logistic Regression is a simpler model and doesn’t capture complicated relationships as well as Random Forest does.
+**Logistic Regression**, with its 96% accuracy, still performs well but struggles with subtle class boundaries such as the **Good** category.
 
-**In simple terms:**
-Random Forest understands the data better and gives much more accurate predictions.
-Logistic Regression is good, but not as strong for this type of problem.
+### 🔍 Summary:
+- **Random Forest:** superior accuracy, deeper pattern recognition  
+- **Logistic Regression:** strong baseline model but limited by linear assumptions  
 """)
-
-
-
+st.markdown("</div>", unsafe_allow_html=True)
