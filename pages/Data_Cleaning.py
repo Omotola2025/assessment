@@ -19,22 +19,23 @@ st.markdown(hide_sidebar, unsafe_allow_html=True)
 navbar = """
 <style>
 .topnav {
-    background-color: #18f58e;
-    overflow: hidden;
-    padding: 18px;
-    border-radius: 10px;
+   background-color: #f518ed;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 1000px;
     display: flex;
-    justify-content: space-between;
-    margin_top: -20px;
-    width: 100%;
+    justify-content: space-between;  
+    align-items: center;
+    margin-top:-60px;
+    margin-left: 80px;
 }
 .topnav a {
     color: #f2f2f2;
-    padding: 14px 26px;
     text-decoration: none;
     font-size: 17px;
-    border-radius: 6px;
-    transition: 0.3s;
+    padding: 12px 25px;  
+    border-radius: 5px;
+    display: inline-block;
 }
 .topnav a:hover {
     background-color: #374151;
